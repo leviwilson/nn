@@ -10,5 +10,6 @@ select (select count(*) from binaries) as Binaries,
 (select count(*) from releases where musicinfoID is null and categoryID between 3000 and 3999) as MusicLookups,
 (select count(*) from releases where imdbID is null and categoryID between 2000 and 2999) as MovieLookups,
 (select count(*) from releases where rageID is null and categoryID between 5000 and 5999) as TVLookups,
+(select count(*) from releases where nfostatus<0) as NFOlookups,
 (select count(*) from releases) as Releases;
 ```
